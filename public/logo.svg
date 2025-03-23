@@ -1,0 +1,83 @@
+<svg
+    width="320"
+    height="120"
+    viewBox="0 0 320 120"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <linearGradient id="factGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#00E5FF; stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#00B0FF; stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="buddyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#8A2BE2; stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#6A5ACD; stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <style>
+        @keyframes neonGlow {
+            0% { filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.8)); }
+            50% { filter: drop-shadow(0 0 16px rgba(0, 229, 255, 1)); }
+            100% { filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.8)); }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .bulb {
+            stroke: #00E5FF;
+            stroke-width: 4;
+            fill: none;
+            animation: neonGlow 2s infinite alternate ease-in-out;
+        }
+
+        .bulb-glow {
+            fill: #00E5FF;
+            opacity: 0.6;
+            animation: pulse 2s infinite alternate ease-in-out;
+        }
+
+        .text-fact {
+            font-family: "Arial", sans-serif;
+            font-size: 38px;
+            font-weight: bold;
+            fill: url(#factGradient);
+            animation: slideIn 1.5s ease-in-out, neonGlow 2s infinite alternate;
+        }
+
+        .text-buddy {
+            font-family: "Arial", sans-serif;
+            font-size: 38px;
+            font-weight: bold;
+            fill: url(#buddyGradient);
+            animation: fadeIn 2s ease-in-out 1s forwards, neonGlow 2s infinite alternate;
+            opacity: 0;
+        }
+    </style>
+
+    <!-- Glowing Light Bulb -->
+    <circle cx="50" cy="50" r="18" class="bulb" />
+    <circle cx="50" cy="50" r="10" class="bulb-glow" />
+    <line x1="50" y1="68" x2="50" y2="75" stroke="#00E5FF" stroke-width="4" />
+    <line x1="42" y1="75" x2="58" y2="75" stroke="#00E5FF" stroke-width="4" />
+
+    <!-- Sliding Text Animation -->
+    <text x="90" y="60" class="text-fact">Fact</text>
+    <text x="180" y="60" class="text-buddy">Buddy</text>
+
+</svg>
